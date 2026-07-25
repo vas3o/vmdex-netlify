@@ -34,7 +34,6 @@
       <div class="sub-note">Free tier, no card required • Discord</div>
     </div>
 
-    <!-- Code Demo Window -->
     <div class="code-preview-card animate-pop">
       <div class="preview-header">
         <div class="file-info">
@@ -95,12 +94,10 @@
     </div>
   </section>
 
-  <!-- Scroll-Triggered Animation Script -->
   <script>
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry, index) => {
         if (entry.isIntersecting) {
-          // Add slight stagger delay
           setTimeout(() => {
             entry.target.classList.add('visible');
           }, index * 100);
