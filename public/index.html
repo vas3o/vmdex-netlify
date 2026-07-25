@@ -12,9 +12,7 @@
 <body>
 
   <nav class="navbar">
-    <div class="brand-logo">
-      <span class="logo-v">V</span><span class="logo-m">M</span><span class="logo-d">D</span><span class="logo-e">E</span><span class="logo-x">X</span>
-    </div>
+    <div class="brand-logo">VMDEX</div>
     <div class="nav-links">
       <a href="dashboard.html">Docs</a>
       <a href="auth.html">Pricing</a>
@@ -24,7 +22,7 @@
   </nav>
 
   <main class="hero-container">
-    <div class="hero-header">
+    <div class="hero-header animate-pop">
       <span class="badge">// LUAU • LUA OBFUSCATION</span>
       <h1>Ship the script.<br><span class="highlight">Keep the source.</span></h1>
       <p>VMdex compiles your Luau into a virtualized machine with encrypted constants, layered anti-tamper protection, and forensic watermarking. Built for Roblox developers who sell what they write.</p>
@@ -37,11 +35,11 @@
     </div>
 
     <!-- Code Demo Window -->
-    <div class="code-preview-card">
+    <div class="code-preview-card animate-pop">
       <div class="preview-header">
         <div class="file-info">
           <span class="icon">📄</span>
-          <span>wynfuscate-reward.lua</span>
+          <span>vmdex-reward.lua</span>
           <span class="flag">--security-tier max</span>
         </div>
         <div class="action-tag">[ SCRUB ]</div>
@@ -79,23 +77,39 @@
   </main>
 
   <section class="stats-grid">
-    <div class="stat-card">
+    <div class="stat-card animate-pop">
       <h2>3</h2>
       <p>SECURITY TIERS</p>
     </div>
-    <div class="stat-card">
+    <div class="stat-card animate-pop">
       <h2>15+</h2>
       <p>COMPILE-TIME MACROS</p>
     </div>
-    <div class="stat-card">
+    <div class="stat-card animate-pop">
       <h2>6</h2>
       <p>LUA RUNTIMES</p>
     </div>
-    <div class="stat-card">
+    <div class="stat-card animate-pop">
       <h2>1</h2>
       <p>UNIQUE VM PER BUILD</p>
     </div>
   </section>
+
+  <!-- Scroll-Triggered Animation Script -->
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+          // Add slight stagger delay
+          setTimeout(() => {
+            entry.target.classList.add('visible');
+          }, index * 100);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.animate-pop').forEach((el) => observer.observe(el));
+  </script>
 
 </body>
 </html>
