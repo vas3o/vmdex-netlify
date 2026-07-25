@@ -1,16 +1,17 @@
 :root {
-  --bg-main: #050505;
-  --bg-surface: #0e0e11;
-  --bg-card: #141418;
+  --bg-main: #0a0a0c;
+  --bg-surface: #121216;
+  --bg-card: #18181f;
   --border-color: rgba(255, 255, 255, 0.08);
-  --border-hover: rgba(255, 199, 44, 0.4);
+  --border-hover: rgba(234, 179, 8, 0.35);
   
-  --accent: #ffc72c;
-  --accent-hover: #e6b020;
-  --accent-glow: rgba(255, 199, 44, 0.12);
+  --accent: #eab308;
+  --accent-hover: #ca8a04;
+  --accent-glow: rgba(234, 179, 8, 0.15);
+  --accent-text: #000000;
   
-  --text-main: #ffffff;
-  --text-muted: #a1a1aa;
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
   --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
 }
@@ -35,9 +36,9 @@ body {
   top: 0;
   left: 50%;
   transform: translateX(-50%);
-  width: 1000px;
-  height: 450px;
-  background: radial-gradient(ellipse at top, rgba(255, 199, 44, 0.08) 0%, transparent 70%);
+  width: 900px;
+  height: 400px;
+  background: radial-gradient(ellipse at top, rgba(234, 179, 8, 0.07) 0%, transparent 70%);
   pointer-events: none;
   z-index: 0;
 }
@@ -52,7 +53,7 @@ body {
 
 header {
   border-bottom: 1px solid var(--border-color);
-  background: rgba(5, 5, 5, 0.85);
+  background: rgba(10, 10, 12, 0.85);
   backdrop-filter: blur(12px);
   position: sticky;
   top: 0;
@@ -70,14 +71,27 @@ nav {
   text-decoration: none;
   display: flex;
   align-items: center;
+  gap: 10px;
+}
+
+.brand-icon {
+  width: 32px;
+  height: 32px;
+  background: linear-gradient(135deg, var(--accent) 0%, #ca8a04 100%);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #000;
+  box-shadow: 0 0 12px var(--accent-glow);
 }
 
 .brand-text {
   font-family: var(--font-sans);
-  font-weight: 900;
-  font-size: 1.5rem;
-  letter-spacing: -0.03em;
-  color: var(--accent);
+  font-weight: 800;
+  font-size: 1.35rem;
+  letter-spacing: -0.02em;
+  color: var(--text-main);
 }
 
 .nav-links {
@@ -112,7 +126,7 @@ nav {
 
 .btn-primary, .nav-cta {
   background-color: var(--accent);
-  color: #000000;
+  color: var(--accent-text);
   border: 1px solid var(--accent);
 }
 
@@ -134,14 +148,14 @@ nav {
 }
 
 .hero {
-  padding: 100px 0 60px;
+  padding: 90px 0 60px;
   text-align: center;
 }
 
 .hero h1 {
-  font-size: 3.8rem;
+  font-size: 3.6rem;
   font-weight: 800;
-  line-height: 1.1;
+  line-height: 1.15;
   margin-bottom: 24px;
   letter-spacing: -0.03em;
   color: var(--text-main);
@@ -159,7 +173,7 @@ nav {
   max-width: 620px;
   margin: 0 auto 36px;
   color: var(--text-muted);
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   line-height: 1.6;
 }
 
@@ -176,7 +190,7 @@ nav {
   border-radius: 12px;
   text-align: left;
   overflow: hidden;
-  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.8);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
 }
 
 .window-bar {
@@ -221,22 +235,22 @@ nav {
 .c-num { color: #f43f5e; }
 
 .block {
-  padding: 90px 0;
+  padding: 80px 0;
   border-top: 1px solid var(--border-color);
 }
 
 .sec-head {
   text-align: center;
-  margin-bottom: 56px;
+  margin-bottom: 52px;
 }
 
 .kicker {
   color: var(--accent);
   font-weight: 700;
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
-  margin-bottom: 10px;
+  letter-spacing: 0.1em;
+  margin-bottom: 8px;
 }
 
 .sec-head h2 {
@@ -247,7 +261,7 @@ nav {
 .sec-head p {
   color: var(--text-muted);
   margin-top: 8px;
-  font-size: 1.05rem;
+  font-size: 1rem;
 }
 
 .grid {
@@ -261,7 +275,7 @@ nav {
   border: 1px solid var(--border-color);
   padding: 32px;
   border-radius: 12px;
-  transition: all 0.2s;
+  transition: all 0.2s ease;
 }
 
 .cell:hover {
@@ -275,7 +289,7 @@ nav {
 }
 
 .cell h3 {
-  font-size: 1.2rem;
+  font-size: 1.15rem;
   margin-bottom: 8px;
   font-weight: 700;
 }
@@ -302,7 +316,7 @@ nav {
   font-family: var(--font-mono);
   color: var(--accent);
   font-weight: 800;
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   margin-bottom: 12px;
 }
 
@@ -325,14 +339,14 @@ nav {
 .stat .lbl { color: var(--text-muted); font-size: 0.95rem; margin-top: 4px; }
 
 .cta {
-  padding: 100px 0;
+  padding: 90px 0;
   text-align: center;
   border-top: 1px solid var(--border-color);
-  background: radial-gradient(circle at center, rgba(255, 199, 44, 0.05) 0%, transparent 70%);
+  background: radial-gradient(circle at center, rgba(234, 179, 8, 0.05) 0%, transparent 70%);
 }
 
 .cta h2 {
-  font-size: 2.4rem;
+  font-size: 2.2rem;
   font-weight: 800;
   margin-bottom: 12px;
 }
