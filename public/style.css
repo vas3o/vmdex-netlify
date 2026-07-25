@@ -3,7 +3,6 @@
   --panel-bg: #0f1115;
   --input-bg: #050608;
   
-  /* Yellow Gradient Theme */
   --yellow-main: #facc15;
   --yellow-secondary: #eab308;
   --yellow-gradient: linear-gradient(135deg, #fef08a 0%, #facc15 50%, #ca8a04 100%);
@@ -30,7 +29,6 @@ body {
   overflow-x: hidden;
 }
 
-/* NAVBAR */
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -86,7 +84,6 @@ body {
   box-shadow: 0 6px 20px rgba(250, 204, 21, 0.3);
 }
 
-/* HERO SECTION */
 .hero-container {
   max-width: 1100px;
   margin: 4rem auto;
@@ -173,7 +170,6 @@ body {
   margin-top: 0.8rem;
 }
 
-/* POPUP ANIMATION CLASSES */
 .animate-pop {
   opacity: 0;
   transform: translateY(30px) scale(0.95);
@@ -186,7 +182,6 @@ body {
   transform: translateY(0) scale(1);
 }
 
-/* CODE PREVIEW CARD */
 .code-preview-card {
   background: var(--panel-bg);
   border: 1px solid var(--border-color);
@@ -272,7 +267,6 @@ body {
   font-family: 'JetBrains Mono', monospace;
 }
 
-/* STATS GRID */
 .stats-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -312,7 +306,6 @@ body {
   margin-top: 0.5rem;
 }
 
-/* DASHBOARD */
 .dashboard-container {
   max-width: 1000px;
   margin: 3rem auto;
@@ -411,4 +404,35 @@ textarea:focus {
   display: none;
   font-family: 'JetBrains Mono', monospace;
   font-size: 0.85rem;
+}
+
+.luau-keyword {
+  color: #ff7b72;
+  font-weight: 600;
+}
+
+.luau-builtin {
+  color: #facc15;
+  font-weight: 500;
+}
+
+.luau-string {
+  color: #a5d6ff;
+}
+
+.luau-number {
+  color: #79c0ff;
+}
+
+.luau-comment {
+  color: #8b949e;
+  font-style: italic;
+}
+
+.luau-function-call {
+  color: #d2a8ff;
+}
+
+.luau-operator {
+  color: #f0f6fc;
 }
