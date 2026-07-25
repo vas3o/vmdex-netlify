@@ -2,18 +2,100 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>VMdex | Luau Obfuscation</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
 </head>
 <body>
+
   <nav class="navbar">
-    <div style="font-weight: 800; font-size: 1.5rem; color: var(--accent-color); letter-spacing: 2px;">VMDEX</div>
-    <a href="auth.html" class="nav-btn">Sign In</a>
+    <div class="brand-logo">
+      <span class="logo-v">V</span><span class="logo-m">M</span><span class="logo-d">D</span><span class="logo-e">E</span><span class="logo-x">X</span>
+    </div>
+    <div class="nav-links">
+      <a href="dashboard.html">Docs</a>
+      <a href="auth.html">Pricing</a>
+      <a href="auth.html">Sign in</a>
+      <a href="dashboard.html" class="btn-primary-sm">Get started</a>
+    </div>
   </nav>
-  <main class="hero">
-    <h1>Ship the script.<br>Keep the source.</h1>
-    <p>Advanced Luau virtualized protection engine for Roblox developers.</p>
-    <a href="dashboard.html" class="nav-btn" style="padding: 1rem 2rem; font-size: 1.1rem;">Obfuscate a script</a>
+
+  <main class="hero-container">
+    <div class="hero-header">
+      <span class="badge">// LUAU • LUA OBFUSCATION</span>
+      <h1>Ship the script.<br><span class="highlight">Keep the source.</span></h1>
+      <p>VMdex compiles your Luau into a virtualized machine with encrypted constants, layered anti-tamper protection, and forensic watermarking. Built for Roblox developers who sell what they write.</p>
+      
+      <div class="hero-actions">
+        <a href="dashboard.html" class="btn-primary">Obfuscate a script</a>
+        <a href="dashboard.html" class="btn-secondary">read the docs »</a>
+      </div>
+      <div class="sub-note">Free tier, no card required • Discord</div>
+    </div>
+
+    <!-- Code Demo Window -->
+    <div class="code-preview-card">
+      <div class="preview-header">
+        <div class="file-info">
+          <span class="icon">📄</span>
+          <span>wynfuscate-reward.lua</span>
+          <span class="flag">--security-tier max</span>
+        </div>
+        <div class="action-tag">[ SCRUB ]</div>
+      </div>
+
+      <div class="code-editor-mock">
+        <div class="line-numbers">1<br>2<br>3<br>4<br>5</div>
+        <pre class="code-content"><span class="keyword">local</span> function grantReward(player, amount)
+  <span class="keyword">local</span> stats = player:FindFirstChild("leaderstats")
+  <span class="keyword">if not</span> stats <span class="keyword">then return end</span>
+  stats.Coins.Value += amount
+<span class="keyword">end</span></pre>
+      </div>
+
+      <div class="feature-bar">
+        <span>VM GENERATION</span>
+        <span>•</span>
+        <span>CONSTANT ENCRYPTION</span>
+        <span>•</span>
+        <span>ANTI-TAMPER</span>
+      </div>
+
+      <div class="obfuscated-preview">
+        <code><span class="comment">01</span> return(function(...)local ... end)(...)</code>
+      </div>
+
+      <div class="preview-footer">
+        <span>Seed: 84121537 (random)</span>
+        <span>•</span>
+        <span>vm generated</span>
+        <span>•</span>
+        <span>protections applied: 0.41s</span>
+      </div>
+    </div>
   </main>
+
+  <section class="stats-grid">
+    <div class="stat-card">
+      <h2>3</h2>
+      <p>SECURITY TIERS</p>
+    </div>
+    <div class="stat-card">
+      <h2>15+</h2>
+      <p>COMPILE-TIME MACROS</p>
+    </div>
+    <div class="stat-card">
+      <h2>6</h2>
+      <p>LUA RUNTIMES</p>
+    </div>
+    <div class="stat-card">
+      <h2>1</h2>
+      <p>UNIQUE VM PER BUILD</p>
+    </div>
+  </section>
+
 </body>
 </html>
