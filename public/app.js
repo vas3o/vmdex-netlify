@@ -1,5 +1,25 @@
 const API_URL = "/api";
 
+function switchMode(mode) {
+  document.getElementById('pasteSection').style.display = mode === 'paste' ? 'block' : 'none';
+  document.getElementById('uploadSection').style.display = mode === 'upload' ? 'block' : 'none';
+  
+  document.getElementById('tabPaste').classList.toggle('active', mode === 'paste');
+  document.getElementById('tabUpload').classList.toggle('active', mode === 'upload');
+}
+
+function handleFileUpload(event) {
+  const file = event.target.files[0];
+  if (file) {
+    const reader = new FileReader();
+    reader.onload = function(e) {
+      document.getElementById('scriptInput').value = e.target.result;
+      switchMode('paste');
+    };
+    reader.readAsText(file);
+  }
+}
+
 async function processObfuscation() {
   const code = document.getElementById('scriptInput').value;
   const errorBanner = document.getElementById('errorBanner');
