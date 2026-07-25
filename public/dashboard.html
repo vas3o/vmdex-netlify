@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>VMdex | Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div style="font-weight: 800; font-size: 1.5rem; color: var(--accent-color); letter-spacing: 2px;">VMDEX</div>
+    <span style="color: var(--text-muted);">Dashboard</span>
+  </nav>
+  <div class="editor-container">
+    <textarea id="scriptInput" placeholder="-- Paste Luau script here..."></textarea>
+    <div id="errorBanner" class="error-banner"></div>
+    <button class="nav-btn" onclick="processObfuscation()" style="margin-top: 1rem;">Obfuscate Script</button>
+    <h3 style="margin-top: 2rem;">Output:</h3>
+    <textarea id="scriptOutput" readonly></textarea>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
