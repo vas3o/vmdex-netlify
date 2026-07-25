@@ -1,7 +1,6 @@
 const API_URL = "/api";
 
 document.addEventListener("DOMContentLoaded", () => {
-  // Smooth scroll logic for anchor links
   const anchors = document.querySelectorAll('a[href^="#"]');
   anchors.forEach((anchor) => {
     anchor.addEventListener("click", function (e) {
@@ -18,6 +17,21 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   });
+
+  const animatedElements = document.querySelectorAll('.animate-on-scroll');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.15,
+    rootMargin: '0px 0px -50px 0px'
+  });
+
+  animatedElements.forEach(el => observer.observe(el));
 });
 
 function switchMode(mode) {
