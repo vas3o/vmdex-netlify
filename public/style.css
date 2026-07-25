@@ -10,7 +10,7 @@
   --accent-glow: rgba(234, 179, 8, 0.15);
   --accent-text: #000000;
   
-  --text-main: #f8fafc;
+  --text-main: #ffffff;
   --text-muted: #94a3b8;
   --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
@@ -38,7 +38,7 @@ body {
   transform: translateX(-50%);
   width: 900px;
   height: 400px;
-  background: radial-gradient(ellipse at top, rgba(234, 179, 8, 0.07) 0%, transparent 70%);
+  background: radial-gradient(ellipse at top, rgba(234, 179, 8, 0.08) 0%, transparent 70%);
   pointer-events: none;
   z-index: 0;
 }
@@ -71,19 +71,13 @@ nav {
   text-decoration: none;
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
 }
 
-.brand-icon {
-  width: 32px;
-  height: 32px;
-  background: linear-gradient(135deg, var(--accent) 0%, #ca8a04 100%);
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #000;
-  box-shadow: 0 0 12px var(--accent-glow);
+.brand-logo {
+  height: 38px;
+  width: auto;
+  object-fit: contain;
 }
 
 .brand-text {
@@ -122,6 +116,7 @@ nav {
   text-decoration: none;
   transition: all 0.2s ease;
   cursor: pointer;
+  border: none;
 }
 
 .btn-primary, .nav-cta {
@@ -166,7 +161,7 @@ nav {
 }
 
 .hero h1 .dim {
-  color: var(--text-muted);
+  color: #ffffff;
 }
 
 .lead {
@@ -191,6 +186,7 @@ nav {
   text-align: left;
   overflow: hidden;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+  animation: fadeInUp 0.6s ease-out;
 }
 
 .window-bar {
@@ -275,12 +271,14 @@ nav {
   border: 1px solid var(--border-color);
   padding: 32px;
   border-radius: 12px;
-  transition: all 0.2s ease;
+  transition: all 0.25s ease;
+  animation: fadeIn 0.8s ease-out;
 }
 
 .cell:hover {
   border-color: var(--border-hover);
-  transform: translateY(-2px);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
 }
 
 .cell svg {
@@ -310,6 +308,11 @@ nav {
   border: 1px solid var(--border-color);
   padding: 32px;
   border-radius: 12px;
+  transition: all 0.25s ease;
+}
+
+.step:hover {
+  border-color: var(--border-hover);
 }
 
 .step .n {
@@ -331,12 +334,20 @@ nav {
 .stat .num {
   font-size: 3rem;
   font-weight: 800;
-  color: var(--text-main);
+  color: #ffffff;
   font-family: var(--font-mono);
 }
 
-.stat .u { color: var(--accent); }
-.stat .lbl { color: var(--text-muted); font-size: 0.95rem; margin-top: 4px; }
+.stat .u {
+  color: var(--accent);
+  font-weight: 800;
+}
+
+.stat .lbl {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  margin-top: 4px;
+}
 
 .cta {
   padding: 90px 0;
@@ -354,6 +365,99 @@ nav {
 .cta p {
   color: var(--text-muted);
   margin-bottom: 32px;
+}
+
+.dashboard-panel {
+  max-width: 800px;
+  margin: 50px auto 100px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  padding: 36px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+  animation: fadeInUp 0.5s ease-out;
+}
+
+.dash-header {
+  margin-bottom: 28px;
+}
+
+.dash-header h1 {
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 6px;
+}
+
+.dash-header p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+.tab-group {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.tab-btn {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  color: var(--text-muted);
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.tab-btn.active, .tab-btn:hover {
+  background: var(--accent);
+  color: var(--accent-text);
+  border-color: var(--accent);
+}
+
+.code-textarea {
+  width: 100%;
+  height: 220px;
+  background-color: var(--bg-main);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  color: var(--text-main);
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  padding: 16px;
+  resize: vertical;
+  outline: none;
+  transition: border-color 0.2s;
+  margin-bottom: 20px;
+}
+
+.code-textarea:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 12px var(--accent-glow);
+}
+
+.dash-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 28px;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 footer {
