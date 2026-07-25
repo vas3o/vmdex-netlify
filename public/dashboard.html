@@ -3,58 +3,66 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>VMdex | Dashboard</title>
+  <title>Dashboard — VMdex</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-  <nav class="navbar">
-    <div class="brand-logo">
-      <span class="logo-v">V</span><span class="logo-m">M</span><span class="logo-d">D</span><span class="logo-e">E</span><span class="logo-x">X</span>
-    </div>
-    <div class="nav-links">
-      <span style="color: var(--text-muted); font-size: 0.9rem;">Workspace</span>
-      <a href="index.html" class="btn-secondary">Logout</a>
-    </div>
-  </nav>
+  <div class="bg-ambient"></div>
 
-  <div class="dashboard-container">
-    <div class="dashboard-header">
-      <h2>Obfuscate Script</h2>
-      <p>Select your file or paste your Luau code below to protect it.</p>
+  <header>
+    <div class="wrap">
+      <nav>
+        <a href="/" class="brand">
+          <img src="https://media.discordapp.net/attachments/1513625171343315024/1530493207832432671/Screenshot_2026-07-25-13-08-40-59_dba69a5e82e939c3ddef13f99a115ca3-removebg-preview_2.png?ex=6a65c65f&is=6a6474df&hm=289f5ec8073dab9995c710ee982373af05cc2ad32e79498ba1e441e29ce5c4fc&=&format=webp&quality=lossless&width=636&height=613" alt="VMDEX Logo" class="brand-logo">
+          <span class="brand-text">VMDEX</span>
+        </a>
+        <div class="nav-links">
+          <a href="/">Home</a>
+          <a href="https://discord.gg/HDReGsmd45" target="_blank">Discord</a>
+        </div>
+      </nav>
     </div>
+  </header>
 
-    <div class="editor-panel">
-      <div class="tab-header">
-        <button class="tab-btn active" id="tabPaste" onclick="switchMode('paste')">Paste Code</button>
-        <button class="tab-btn" id="tabUpload" onclick="switchMode('upload')">Upload File (.luau / .lua)</button>
+  <main class="wrap">
+    <div class="dashboard-panel">
+      <div class="dash-header">
+        <h1>Obfuscate Script</h1>
+        <p>Select your file or paste your Luau code below to protect it.</p>
       </div>
 
-      <div id="pasteSection" class="input-section">
-        <textarea id="scriptInput" placeholder="-- Paste your Roblox Luau script here..."></textarea>
+      <div class="tab-group">
+        <button class="tab-btn active">Paste Code</button>
+        <button class="tab-btn">Upload File (.luau / .lua)</button>
       </div>
 
-      <div id="uploadSection" class="input-section" style="display: none;">
-        <div class="file-drop-zone">
-          <p>Drag & Drop your script file here or</p>
-          <input type="file" id="fileInput" accept=".lua,.luau,.txt" onchange="handleFileUpload(event)">
+      <textarea class="code-textarea" placeholder="-- Paste your Roblox Luau script here..."></textarea>
+
+      <div class="dash-actions">
+        <button class="btn btn-primary">Obfuscate Script</button>
+      </div>
+
+      <div class="dash-header">
+        <h2>Obfuscated Result</h2>
+      </div>
+      <textarea class="code-textarea" readonly placeholder="-- Obfuscated code will appear here..."></textarea>
+    </div>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <div class="foot">
+        <span>© 2026 VMdex. Built for Roblox developers.</span>
+        <div class="foot-links">
+          <a href="https://discord.gg/HDReGsmd45" target="_blank">Discord</a>
         </div>
       </div>
-
-      <div id="errorBanner" class="error-banner"></div>
-
-      <div class="action-bar">
-        <button class="btn-primary" onclick="processObfuscation()">Obfuscate Script</button>
-      </div>
-
-      <div class="output-section">
-        <label>Obfuscated Result:</label>
-        <textarea id="scriptOutput" readonly placeholder="-- Obfuscated code will appear here..."></textarea>
-      </div>
     </div>
-  </div>
+  </footer>
 
-  <script src="app.js"></script>
 </body>
 </html>
